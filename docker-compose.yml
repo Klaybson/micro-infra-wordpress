@@ -10,8 +10,10 @@ services:
     build:
       context: ./apache
     ports:
-      - "8080:80"  # Mapeie a porta do host para a porta do contêiner
+      - "8081:80"  # Mapeie a porta do host para a porta do contêiner
     # Adicione qualquer configuração adicional para o contêiner Apache
+    volumes:
+      - ./wordpress_files:/var/www/html/
 
   wordpress:
     build:
@@ -20,3 +22,5 @@ services:
       - php
       - apache
     # Adicione qualquer configuração adicional para o contêiner do WordPress
+    volumes:
+      - ./wordpress_files:/var/www/html/

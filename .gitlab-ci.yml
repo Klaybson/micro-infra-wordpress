@@ -1,0 +1,24 @@
+stages:
+  - build
+  - deploy
+/*
+criar_imagens:
+  stage: build
+  tags:
+    - oci
+  script:
+    - docker build -t "klaybson/portais:1.0" app/.
+    - docker build -t "klaybson/portais:1.0" app/.
+    - docker build -t "klaybson/portais:1.0" app/.
+
+executar_imagens:
+  stage: deploy
+  needs:
+    - criar_imagens
+  tags:
+    - oci
+  before_script:
+    - echo "Preparando ambiente......"
+    - chmod +x ./script.sh
+  script: 
+    - ./script.sh $CI_PORTAL_NAME  # Passando $CI_PORTAL_NAME como exemplo, use a variável que desejar
