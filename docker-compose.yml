@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  php:
+    build:
+      context: ./php
+    # Adicione qualquer configuração adicional para o contêiner PHP
+
+  apache:
+    build:
+      context: ./apache
+    ports:
+      - "8080:80"  # Mapeie a porta do host para a porta do contêiner
+    # Adicione qualquer configuração adicional para o contêiner Apache
+
+  wordpress:
+    build:
+      context: ./wordpress
+    depends_on:
+      - php
+      - apache
+    # Adicione qualquer configuração adicional para o contêiner do WordPress
