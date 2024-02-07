@@ -53,7 +53,7 @@ project/
 
    [http://localhost:8080](http://localhost:8080)
 
-### Observações Importantes ℹ️
+### Observações Importantes ⚠️ 
 
 - Certifique-se de que as portas necessárias não estão sendo utilizadas por outros serviços.
 - Você pode modificar as configurações dos contêineres conforme necessário para atender aos seus requisitos específicos.
